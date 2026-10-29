@@ -1,21 +1,21 @@
-# DeutschPath Academy V7 — Premium Curriculum Navigation + Week 3
+# DeutschPath Academy Version 8 — 52-week framework
 
-## Deployment
-Extract the ZIP and replace `index.html` and `manifest.webmanifest` in your GitHub Pages repository root (or Hostinger public_html directory). No build step.
+## Changes
+- Repairs Week 1 navigation and adds previous/next week controls for all 52 weeks.
+- Seven top-level navigation categories only; study timer is a utility at top right, not a category.
+- 52-week curriculum directory with 364 daily 240-minute study plans (CSV + JSON).
+- Weeks 1–3 retain the previously authored interactive lessons.
+- Weeks 4–52 provide functioning guided study templates, vocabulary, speech playback, vocabulary comprehension quizzes, writing, and local progress. These are **not** 343 fully authored four-hour lessons. Expert-authored explanations, authentic audio, and skills assessments remain future work.
+- Timer starts, pauses, survives reload, and can log a completed session into the existing study tracker. Elapsed wall time is not proof of focused learning.
+- Existing Week 1–3 local storage keys retained. Back up before deployment.
 
-## What's included
-- Seven main navigation items: Dashboard, Lessons, Assessments, Vocabulary, Weekly Exams, Roadmap, My Progress.
-- Lessons: 52-week grid; Weeks 1–3 are available, Weeks 4–52 are clearly marked planned/locked.
-- 21 interactive lessons: original Days 1–14 retained, seven new Days 15–21 with trilingual vocabulary, German speech synthesis, 8 graded practice questions and writing.
-- Weekly Exams: Week 1 original independent exam, Week 2 and Week 3 independent 18-question exams.
-- Unified progress: 21 published lessons, export/import of Weeks 1–3 and weekly exam results.
-- Progress remains browser-local. Legacy Week 1 and Week 2 storage keys retained; Week 3 has a separate key.
+## Deploy to GitHub Pages
+Upload **all five files** from this ZIP to the root of your existing GitHub Pages repository (replace existing index.html and manifest.webmanifest): index.html, manifest.webmanifest, README.md, curriculum_52_weeks.csv, curriculum_52_weeks.json. GitHub Pages source: main branch, /(root). Refresh after deploy.
 
-## Upgrade safety
-Before updating, export a complete progress backup from V6 My Progress. Deploy to the **same** website origin to keep local browser progress. The V7 importer accepts the V6 unified JSON backup and optionally restores Week 3 if included. Do not clear browser data.
-
-## Limitations
-- Browser text-to-speech quality varies. Writing is not automatically graded for German correctness.
-- Weeks 4–52 are roadmap placeholders, not published lessons.
-- Tests are internal checkpoints, not CEFR certification.
-- Static code validation does not replace live browser testing.
+## Important limitations
+- Browser text-to-speech depends on installed German voices.
+- No automatic cross-device sync; progress is stored locally.
+- Writing and speaking are self-reviewed, not machine graded.
+- Week 4–52 guided lesson templates are a working curriculum scaffold, not certified A1–B2 course content.
+- Completion does not imply CEFR proficiency.
+- 4 hours per day of focused study may require additional breaks and a sustainable sleep schedule.
