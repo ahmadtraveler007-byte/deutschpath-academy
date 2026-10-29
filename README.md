@@ -1,15 +1,28 @@
-# DeutschPath Academy V5 — Week 2
+# DeutschPath Academy V6 — Unified Weeks 1–2
+Static HTML/CSS/JavaScript website for GitHub Pages or Hostinger. No build step.
 
-Static website for GitHub Pages and Hostinger. Includes the existing V4 Week 1 application and a new Week 2 navigation item with seven interactive lessons (Days 8–14).
+## Features
+- Week 1: seven interactive lessons, 18-question Week 1 exam, study log and vocabulary.
+- Week 2: seven interactive lessons (Days 8–14) with listening, practice, writing and results.
+- Week 2: new independent 18-question examination.
+- Unified dashboard progress: 14 published lessons.
+- My Progress: Week 1 + Week 2 completion and a complete JSON backup/restore.
+- Existing browser data keys retained: `deutschpath-progress-v1` and `deutschpath-week2-v1`.
 
-## Deploy
-Upload index.html and manifest.webmanifest to the root of your existing GitHub Pages repository, replacing the old files. Wait for Pages deployment and hard-refresh. For Hostinger, upload both files to the correct subdomain document root.
-
-## Progress
-Week 1 retains its original localStorage key (`deutschpath-progress-v1`). Week 2 uses `deutschpath-week2-v1`, with its own export/import inside the Week 2 screen. Browser-local data does not sync between devices. Export both backups before clearing browser storage.
-
-## Week 2 completion
-Each lesson: eight questions (six vocabulary, two grammar), score >= 6/8 and 30+ characters of saved writing. Writing correctness and pronunciation are not automatically evaluated. German audio uses browser speech synthesis.
+## Install on GitHub Pages
+1. Export a backup from the currently published site before updating.
+2. Extract ZIP. Upload `index.html` and `manifest.webmanifest` to repository root, replacing the previous versions.
+3. Commit changes. GitHub repository Settings > Pages > Deploy from a branch > main > /(root).
+4. Wait for deployment; hard refresh (Ctrl+F5).
+5. Test Week 1, Week 2, Week 2 Exam, and My Progress.
 
 ## Limitations
-The original V4 weekly exam covers Week 1 only. The 52-week roadmap is not a complete lesson library. No cloud sync, AI tutor, or externally recognized exam certification is included.
+- Browser-local storage only; no automatic device synchronization.
+- Browser text-to-speech varies by device.
+- Writing is not automatically graded for German grammar.
+- 52-week roadmap is a plan; 14 days are implemented.
+- The Week 2 exam is an internal multiple-choice checkpoint, not a recognized CEFR assessment.
+- Static syntax and archive tests do not substitute for live browser testing.
+
+## Caution
+Do not upload the ZIP itself to the repository as a website; extract and upload the files.
