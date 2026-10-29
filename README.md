@@ -1,21 +1,69 @@
-# DeutschPath Academy Version 8 — 52-week framework
+# DeutschPath Academy V9.0 — Modular rebuild
 
-## Changes
-- Repairs Week 1 navigation and adds previous/next week controls for all 52 weeks.
-- Seven top-level navigation categories only; study timer is a utility at top right, not a category.
-- 52-week curriculum directory with 364 daily 240-minute study plans (CSV + JSON).
-- Weeks 1–3 retain the previously authored interactive lessons.
-- Weeks 4–52 provide functioning guided study templates, vocabulary, speech playback, vocabulary comprehension quizzes, writing, and local progress. These are **not** 343 fully authored four-hour lessons. Expert-authored explanations, authentic audio, and skills assessments remain future work.
-- Timer starts, pauses, survives reload, and can log a completed session into the existing study tracker. Elapsed wall time is not proof of focused learning.
-- Existing Week 1–3 local storage keys retained. Back up before deployment.
+## Important: what this release actually includes
 
-## Deploy to GitHub Pages
-Upload **all five files** from this ZIP to the root of your existing GitHub Pages repository (replace existing index.html and manifest.webmanifest): index.html, manifest.webmanifest, README.md, curriculum_52_weeks.csv, curriculum_52_weeks.json. GitHub Pages source: main branch, /(root). Refresh after deploy.
+This is a new, independently organized static web application, not another patch on the V8 monolithic `index.html`.
 
-## Important limitations
-- Browser text-to-speech depends on installed German voices.
-- No automatic cross-device sync; progress is stored locally.
-- Writing and speaking are self-reviewed, not machine graded.
-- Week 4–52 guided lesson templates are a working curriculum scaffold, not certified A1–B2 course content.
-- Completion does not imply CEFR proficiency.
-- 4 hours per day of focused study may require additional breaks and a sustainable sleep schedule.
+**Working application features:**
+- Exactly seven top-level navigation categories.
+- 52 clickable weeks; each opens seven clickable daily study pages (364 total).
+- Previous/next week and previous/next day navigation, including Week 1.
+- Five functional lesson tabs (Learn, Listen, Practice, Write, Results) for every day.
+- Six example phrases per week (312 curated German–English–Urdu examples); text-to-speech depends on browser voices.
+- Six-question vocabulary quizzes per day; score and attempts saved locally.
+- Writing autosave and internal lesson-completion checkpoints.
+- 52 weekly vocabulary checkpoints (12 questions, repeating six example phrases).
+- Circular, manual Start/Pause/Save timer with current local date and running elapsed time.
+- Daily, weekly (Monday–Sunday) and monthly reports with date picker; manual session entry, deletion, and complete V9 JSON backup/import.
+- Responsive layout and no required CDN, Node, Python or third-party runtime.
+
+**Curriculum depth limitation:**
+The 52-week JSON/CSV provides a 364-day topic roadmap and four-hour activity plans. Weeks 4–52 contain *guided learning scaffolds*, not 343 complete, expert-reviewed four-hour teaching chapters. The quiz checks recognition of example translations, not grammatical mastery or CEFR proficiency. Week 1–3 are also rebuilt using this new consistent teaching structure; they do not exactly replicate the longer V3/V4 lesson text. A complete, expert-reviewed A0–B2 curriculum would require additional authored readings, exercises, audio, speaking assessment, feedback and graded mock exams.
+
+## File structure
+
+- `index.html`: accessible HTML shell.
+- `assets/css/styles.css`: responsive design.
+- `assets/js/app.js`: router, UI, timer, reports, quiz logic and storage.
+- `assets/js/data.js`: curated vocabulary phrase banks and learning schedules.
+- `data/curriculum.json`: 364-day roadmap (loaded with fetch).
+- `data/curriculum_364_days.csv`: spreadsheet-friendly export.
+- `manifest.webmanifest`: web-app metadata.
+- `README.md`: this file.
+
+## GitHub Pages installation
+
+1. Export your progress from the old site before upgrading; **V8 backup files are not directly compatible with the V9 importer**.
+2. Download and extract this ZIP.
+3. In your existing GitHub repository, upload `index.html`, `assets/`, `data/`, `manifest.webmanifest` and `README.md` at the repository root. Preserve folders and their contents. **Do not upload only `index.html`.**
+4. Remove outdated website files if they conflict with this structure. Commit.
+5. Settings → Pages → Deploy from branch → `main` → `/ (root)`.
+6. Wait for deployment and hard-refresh (Ctrl+F5).
+7. Test Lessons → Week 1 → Day 1; Next Week → Week 2; Week 52; Start/Pause/Save; My Progress calendar.
+
+If GitHub's browser upload does not preserve the folders as intended, create folders with GitHub's file editor or use GitHub Desktop to commit the extracted directory. Ensure `assets/js/app.js` and `data/curriculum.json` resolve from the published URL.
+
+## Hostinger installation
+
+Upload the *contents* of this directory (including `assets` and `data`) to `public_html/deutschpath/` or your desired subdirectory, using File Manager or FTP. Visit `https://yourdomain.example/deutschpath/`. A regular static web host is sufficient. No PHP/Python server or database is needed for this version.
+
+## Study timer & privacy
+
+- The timer starts **only** when you click Start.
+- Pause stops counting. Save records the elapsed time on the browser's current local date.
+- If the tab is refreshed while running, elapsed time is recovered from the saved start timestamp. If you leave it running, elapsed time continues until you pause/save.
+- Date reports are calculated from manually recorded sessions.
+- All data is in `localStorage` **for that browser and exact website origin**, not on GitHub, Hostinger's server or a database. Changing domains/devices/browsers does not synchronize records.
+- Use My Progress → Download complete JSON backup regularly; import on another device as needed.
+- The legacy completion import is a best-effort tool and may not recognize every older release's data layout. It does not import old quiz scores or writing.
+
+## QA status
+
+- Node JavaScript syntax validation passed.
+- Curriculum data validated: 52 weeks, 364 unique days, 240-minute daily schedules.
+- Browser smoke tests using Chromium with an injected data source and mock browser storage passed for Week 1, Week 2, Week 3, Week 52, navigation, timer save, reports and exam directory.
+- Live GitHub Pages / Hostinger deployments and browser audio are **not** verified by these tests.
+
+## Future production enhancements
+
+For true cross-device accounts and secure server-side records, a backend (e.g. Supabase or Hostinger PHP + MySQL) is required. GitHub Pages cannot execute PHP or Python server code. Any backend requires authentication, authorization and security review before use. Keep this version fully static for maximum deployment compatibility.
