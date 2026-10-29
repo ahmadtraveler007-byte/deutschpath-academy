@@ -1,30 +1,21 @@
-# DeutschPath Academy — Starter Release
+# DeutschPath Academy — Version 2.0
 
-## Included
-- Responsive static website (no build step)
-- Six original A0 beginner lessons with German/English/Urdu examples and assignments
-- 10-question graded checkpoint with saved best score
-- 12 vocabulary flashcards with mastery tracking
-- Browser German speech synthesis (voice quality depends on browser/installed voices)
-- Progress tracking using localStorage; JSON export/import
-- 52-week roadmap overview (not 52 weeks of lessons)
+Static website for GitHub Pages and Hostinger. No build step required.
 
-## Hostinger deployment
-1. Create a subdomain, such as `learn.example.com`, in Hostinger and identify its document root.
-2. Upload `index.html` and `manifest.webmanifest` directly into that document root using File Manager or FTP.
-3. Visit the HTTPS URL and test lessons, assessment, and progress.
-4. Do not overwrite an existing WordPress root. Use a separate subdomain/directory.
+## Install / update GitHub Pages
+1. Extract the ZIP. Upload `index.html` and `manifest.webmanifest` to the **root** of your existing `deutschpath-academy` GitHub repository, replacing the old `index.html`.
+2. Keep Settings > Pages > Deploy from a branch > main > /(root).
+3. Wait for the deployment and refresh your published URL with Ctrl+F5.
 
-## GitHub Pages deployment
-1. Create a GitHub repository and upload both files to its root.
-2. In Settings > Pages, select Deploy from a branch, choose `main` and `/ (root)`.
-3. Open the published Pages URL. No build is required.
-4. For a custom domain, follow GitHub Pages DNS and HTTPS instructions.
+## Features
+- Dedicated interactive Day 1: German alphabet, special letters, pronunciation rules, German-English-Urdu explanations, browser TTS, optional speech recognition (transcription only), eight-question graded quiz, saved writing assignment, and completion criteria.
+- Existing Days 2–6 now open on separate pages, but retain starter-level content.
+- Existing dashboard, A0 checkpoint, flashcards, roadmap, backup import/export.
+- Existing localStorage progress retained using `deutschpath-progress-v1`.
 
-## Limitations / next phases
-- Progress is local to the browser; it does not sync between devices. Export/import backup is provided.
-- No account system, cloud database, AI tutor, speech assessment, offline service worker, or admin editor.
-- A1/A2/B1/B2 lesson content, full daily curriculum, and external mock exams are planned, not included.
-- Browser speech synthesis is not prerecorded native-speaker audio.
-- Completion tracking does not certify CEFR proficiency.
-- Requires browser localStorage enabled; clearing site data removes progress unless backed up.
+## Limitations
+- Local browser storage only; no cloud synchronization.
+- Browser-generated audio depends on installed German voices; no pronunciation scoring.
+- Writing is saved, not auto-graded.
+- 52-week curriculum is a roadmap, not completed course content.
+- Completion requires best quiz >=6/8 and writing >=30 characters; does not prove CEFR proficiency.
