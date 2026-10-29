@@ -1,28 +1,21 @@
-# DeutschPath Academy V6 — Unified Weeks 1–2
-Static HTML/CSS/JavaScript website for GitHub Pages or Hostinger. No build step.
+# DeutschPath Academy V7 — Premium Curriculum Navigation + Week 3
 
-## Features
-- Week 1: seven interactive lessons, 18-question Week 1 exam, study log and vocabulary.
-- Week 2: seven interactive lessons (Days 8–14) with listening, practice, writing and results.
-- Week 2: new independent 18-question examination.
-- Unified dashboard progress: 14 published lessons.
-- My Progress: Week 1 + Week 2 completion and a complete JSON backup/restore.
-- Existing browser data keys retained: `deutschpath-progress-v1` and `deutschpath-week2-v1`.
+## Deployment
+Extract the ZIP and replace `index.html` and `manifest.webmanifest` in your GitHub Pages repository root (or Hostinger public_html directory). No build step.
 
-## Install on GitHub Pages
-1. Export a backup from the currently published site before updating.
-2. Extract ZIP. Upload `index.html` and `manifest.webmanifest` to repository root, replacing the previous versions.
-3. Commit changes. GitHub repository Settings > Pages > Deploy from a branch > main > /(root).
-4. Wait for deployment; hard refresh (Ctrl+F5).
-5. Test Week 1, Week 2, Week 2 Exam, and My Progress.
+## What's included
+- Seven main navigation items: Dashboard, Lessons, Assessments, Vocabulary, Weekly Exams, Roadmap, My Progress.
+- Lessons: 52-week grid; Weeks 1–3 are available, Weeks 4–52 are clearly marked planned/locked.
+- 21 interactive lessons: original Days 1–14 retained, seven new Days 15–21 with trilingual vocabulary, German speech synthesis, 8 graded practice questions and writing.
+- Weekly Exams: Week 1 original independent exam, Week 2 and Week 3 independent 18-question exams.
+- Unified progress: 21 published lessons, export/import of Weeks 1–3 and weekly exam results.
+- Progress remains browser-local. Legacy Week 1 and Week 2 storage keys retained; Week 3 has a separate key.
+
+## Upgrade safety
+Before updating, export a complete progress backup from V6 My Progress. Deploy to the **same** website origin to keep local browser progress. The V7 importer accepts the V6 unified JSON backup and optionally restores Week 3 if included. Do not clear browser data.
 
 ## Limitations
-- Browser-local storage only; no automatic device synchronization.
-- Browser text-to-speech varies by device.
-- Writing is not automatically graded for German grammar.
-- 52-week roadmap is a plan; 14 days are implemented.
-- The Week 2 exam is an internal multiple-choice checkpoint, not a recognized CEFR assessment.
-- Static syntax and archive tests do not substitute for live browser testing.
-
-## Caution
-Do not upload the ZIP itself to the repository as a website; extract and upload the files.
+- Browser text-to-speech quality varies. Writing is not automatically graded for German correctness.
+- Weeks 4–52 are roadmap placeholders, not published lessons.
+- Tests are internal checkpoints, not CEFR certification.
+- Static code validation does not replace live browser testing.
