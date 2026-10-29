@@ -67,3 +67,13 @@ Upload the *contents* of this directory (including `assets` and `data`) to `publ
 ## Future production enhancements
 
 For true cross-device accounts and secure server-side records, a backend (e.g. Supabase or Hostinger PHP + MySQL) is required. GitHub Pages cannot execute PHP or Python server code. Any backend requires authentication, authorization and security review before use. Keep this version fully static for maximum deployment compatibility.
+
+
+## Version 10.0 additions
+- Seven top-level navigation categories remain unchanged.
+- Every week now has a dedicated **Extra resources** button and every daily lesson has an **Extra** tab.
+- Extra links include DW, Goethe-Institut, VHS-Lernportal, Easy German, official YouTube film and topic search pages. External links open on their providers; PDFs are **not redistributed**.
+- Dashboard offers 4-hour (240 minute) core or 5-hour (300 minute) study target. The optional extra hour is divided into video, podcast and reading/shadowing.
+- All 364 days have expanded guided assignments and an updated curriculum JSON/CSV. This is **not 364 expert-authored textbook lessons**.
+- Existing Version 9 localStorage keys are preserved for progress and study sessions. New extra notes use the existing backup state.
+- Do not upload only index.html. Upload assets/ and data/ preserving directory structure.
