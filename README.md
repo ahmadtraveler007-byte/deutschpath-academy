@@ -1,21 +1,16 @@
-# DeutschPath Academy — Version 2.0
+# DeutschPath Academy 3.0 — Complete Interactive Week 1
 
-Static website for GitHub Pages and Hostinger. No build step required.
+Static HTML/CSS/JS site. Upload `index.html` and `manifest.webmanifest` to the **root** of your existing GitHub Pages repository. Do not upload the ZIP as-is. GitHub Pages: Settings → Pages → Deploy from branch → main → /(root). Same GitHub Pages URL as before. Hostinger: upload both files to a dedicated site document root.
 
-## Install / update GitHub Pages
-1. Extract the ZIP. Upload `index.html` and `manifest.webmanifest` to the **root** of your existing `deutschpath-academy` GitHub repository, replacing the old `index.html`.
-2. Keep Settings > Pages > Deploy from a branch > main > /(root).
-3. Wait for the deployment and refresh your published URL with Ctrl+F5.
-
-## Features
-- Dedicated interactive Day 1: German alphabet, special letters, pronunciation rules, German-English-Urdu explanations, browser TTS, optional speech recognition (transcription only), eight-question graded quiz, saved writing assignment, and completion criteria.
-- Existing Days 2–6 now open on separate pages, but retain starter-level content.
-- Existing dashboard, A0 checkpoint, flashcards, roadmap, backup import/export.
-- Existing localStorage progress retained using `deutschpath-progress-v1`.
+## Implemented
+- Day 1: existing complete alphabet lesson from Version 2.0
+- Days 2–7: interactive five-section lessons (learn, listen, practice, write, results), 8 scored questions each, explanations, German TTS, writing autosave and 75%+ quiz gate
+- Week 1: 7-day structure, dashboard, vocabulary, separate 10-question checkpoint, roadmap, export/import backup
+- Same browser storage key (`deutschpath-progress-v1`) for compatibility with prior progress
 
 ## Limitations
-- Local browser storage only; no cloud synchronization.
-- Browser-generated audio depends on installed German voices; no pronunciation scoring.
-- Writing is saved, not auto-graded.
-- 52-week curriculum is a roadmap, not completed course content.
-- Completion requires best quiz >=6/8 and writing >=30 characters; does not prove CEFR proficiency.
+- TTS depends on installed German browser/system voice; not human-recorded audio
+- No reliable automated pronunciation grading; writing is saved but not linguistically graded
+- No cloud login or device sync; progress lives in the browser. Export a backup before updating
+- Week 2 onward not built; 52-week roadmap is planning only
+- Legacy Day 2–6 completed flags remain completed even if originally marked with no assessment. To test the new gate, use a lesson not already completed or clear legacy progress after exporting a backup.
